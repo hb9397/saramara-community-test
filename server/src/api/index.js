@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import users from "./routes/users.js";
+
+import users from './routes/users/index.js'
 import posts from "./routes/posts.js";
 import comments from "./routes/comments.js"
 
@@ -10,7 +11,9 @@ import comments from "./routes/comments.js"
 export default () => {
 	const app = Router();
 
+	// user 디렉토리의 index.js 에 Router() 넘기기
 	users(app);
+
     posts(app);
 	comments(app);
 
